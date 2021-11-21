@@ -2,12 +2,15 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
+require('dotenv').config()
+
 const mongoose = require('mongoose');
 const {Customer} = require('./database')
 const {Transaction} = require('./database')
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/BankSystem')
+const connectionURL = process.env.url
+mongoose.connect(connectionURL)
     .then(() => {
         console.log("Connection open!!");
     })
@@ -27,9 +30,7 @@ app.get('/',(req,res)=>{
 })
 app.get('/customers',async(req,res)=>{
     await Customer.find({})
-    .then(customers=>{
-        // const size = screen.width
-        // console.log(size
+    .then(customers=>{  
         res.render('customers',{customers})
     })
     .catch(e=>{

@@ -1,14 +1,15 @@
 {
   "name": "banking-system",
   "version": "1.0.0",
-  "description": "A basic banking system project created as a part of the internship programme",
+  "description": "Basic banking system project created as a part of the TSF GRIP internship programme",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "Rujin Shrestha",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mongoose": "^6.0.13"
