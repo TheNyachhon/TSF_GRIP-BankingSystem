@@ -3,9 +3,6 @@
     margin:0;
     font-family: 'Poppins', sans-serif;
 }
-/* font-family: 'Rampart One', cursive; */
-/* font-family: 'Besley', serif; */
-/* font-family: 'Roboto', sans-serif; */
 html{
     scroll-behavior: smooth;
 }
@@ -64,6 +61,7 @@ h2{
     color: whitesmoke;
 }
 section{
+    width:100%;
     padding:1em;
     margin:2em;
     display: flex;
@@ -76,9 +74,11 @@ section{
 .section-info{
     border-top:1px white solid;
     padding-top:2em;
+    width: auto;
 }
 /* Section - Home */
 #home{
+    width: auto;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -92,11 +92,14 @@ section{
     font-family: 'Rampart One', cursive;
 }
 #home>p{
-    font-size: 2em;
+    font-size: 2.1em;
 }
 #down{
     position: absolute;
     bottom:0;
+}
+#down img:hover{
+    cursor: pointer;
 }
 #scroll{
     width: 3em;
@@ -106,16 +109,18 @@ section{
 }
 /* Section - ABOUT */
 #about{
+    width: auto;
     color: white;
     text-align: justify;
 }
 /* Section - Services */
 #services{
-    min-height: 90vh;
+    height: 90vh;
+    width: auto;
 }
 .container{
     min-height: 20vh;
-    min-width: 100%;
+    width: auto;
     margin:1em;
     padding:1em;
     display: flex;
@@ -141,12 +146,13 @@ section{
     color:white;
     text-align: center;
     margin-top:1em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: 'Roboto', sans-serif;
 }
 /* Section - Use-Services*/
 #use-services{
-    min-height: 50vh;
+    height: 50vh;
+    width: auto;
 }
 .now-button{
     text-align: center;
@@ -308,15 +314,17 @@ nav ul{
 table{
     color:white;
     margin:2em 1em;
-    width: 100%;
+    width:95%;
+    margin:auto;
     text-align: center;
     table-layout: fixed;
     border-collapse:collapse;
+    font-size:0.8em;
 }
 td{
     word-wrap: break-word;
-    border-right: 1px #232C33 solid;
-    border-left: 1px #232C33 solid;
+    border-right: 2px #232C33 solid;
+    border-left: 2px #232C33 solid;
 }
 thead>tr>td:first-child{
     border-radius: 1em 0 0 0;
@@ -324,6 +332,9 @@ thead>tr>td:first-child{
 }
 thead>tr>td:last-child{
     border-radius: 0 1em 0 0;
+}
+td.funds{
+    width: 8em;
 }
 thead tr td{
     font-weight: bold;
@@ -366,7 +377,7 @@ tbody tr:nth-child(2n){
 }
 #transfer label{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color:white;
 }
 #transfer label:first-child{
@@ -420,4 +431,92 @@ tbody tr:nth-child(2n){
 /* font-family: 'Rampart One', cursive; */
 /* font-family: 'Besley', serif; */
 /* font-family: 'Roboto', sans-serif; */
+/* Responsive */
+@media(max-width:425px){
+    .now-button button{
+        width:10em;
+    }
+    #use-services{
+        height: auto;
+    }
+}
+@media(min-width:800px){
+    #home>i{
+        font-size:5em;
+    }
+    #home>h1{
+        font-size: 3em;
+    }
+    #home>p{
+        font-size: 2.3em;
+    }
+    #about{
+        min-height: auto;
+    }
+    h2{
+        font-size:2.3em;
+    }
+    #services{
+        height: auto;
+    }
+    .section-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .section-info p{
+        font-size:1.1em;
+    }
+    .container{
+        width: 25vw;
+        justify-content: space-evenly;
+    }
+    .desc{
+        font-size:1.3em;
+    }
+    table{
+        width: 80%;
+        margin:auto;
+        font-size:1em;
+    }
+    #transfer{
+       width:60%;
+       margin:auto;
+    }
+    #transfer label{
+        font-size: 1.5em;
+    }
+}
+@media(min-width:1100px){
+    #home>i{
+        font-size:7em;
+    }
+    #home>h1{
+        font-size: 4em;
+    }
+    #home>p{
+        font-size: 3em;
+    }
+    h2{
+        font-size:3em;
+    }
+    .section-info p{
+        font-size:1.2em;
+    }
+    .container{
+        width: 20vw;
+        justify-content: space-evenly;
+    }
+    footer{
+        font-size:1.1em;
+    }
+    table{
+        width: 70%;
+        margin:auto;
+        font-size:1.2em;
+    }
+    #transfer{
+        width:50%;
+     }
+}
 
