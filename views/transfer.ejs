@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <title>TSF - Banking System</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <main id="service-page">
+            <div id="service-header">
+                <h1>Transfer Funds</h1>
+            </div>
+            <div id="transfer">
+                <%if(error.transferfunds=='unsuccessful' ){%>
+                    <div id="transfer-error">
+                        <p>Insufficient Funds!</p>
+                    </div>
+                    <%}else if(error.transferfunds=='successful'){%>
+                        <div id="transfer-success">
+                            <p>Funds successfully transfered!</p>
+                        </div>
+                        <%}%>
+                        <label for="sender">From -</label>
+                        <select name="sender">
+                            <option value="<%=sender.email%>">
+                                <%=sender.email%>
+                            </option>
+                        </select>
+                        <label for="receiver">To -</label>
+                        <form action="/transfer/<%=sender._id%>" method="post">
+                            <select name="receiver" required>
+                                <option value="" hidden selected> - - - -</option>
+                                <%for(let x of allCustomers){%>
+                                    <%if(x.email !=sender.email){%>
+                                        <option value="<%=x.email%>">
+                                            <%=x.fullName%> - <%=x.email%>
+                                        </option>
+                                        <%}%>
+                                            <%}%>
+                            </select>
+
+                            <label for="amount">Amount -</label>
+                            <div id="transfer-amount">
+                                <input type="number" name="amount" required>
+                                <button>Transfer Now<i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+</body>
+
+</html>

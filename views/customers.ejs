@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <title>TSF - Banking System</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+        <main id="service-page">
+            <div id="service-header">
+                <h1>Customers List</h1>
+            </div>
+            <div id="customers-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                #
+                            </td>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                Email
+                            </td>
+                            <td>
+                                Balance
+                            </td>
+                            <td>
+                                Funds
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%let count=1%>
+                            <%for(let x of customers){%>
+                                <tr>
+                                    <td>
+                                        <%=count%>
+                                    </td>
+                                    <td>
+                                        <%=x.fullName%>
+                                    </td>
+                                    <td>
+                                        <%=x.email%>
+                                    </td>
+                                    <td>
+                                        <span class="balance">
+                                            <%=x.balance%>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a href="/transfer/<%=x._id%>">
+                                            <button class="transfer-btn">Transfer</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <%count++}%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+</body>
+
+</html>

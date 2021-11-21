@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <title>TSF - Banking System</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <main id="service-page">
+            <div id="service-header">
+                <h1>Transaction History</h1>
+            </div>
+            <div id="transaction-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                #
+                            </td>
+                            <td>
+                                From
+                            </td>
+                            <td>
+                                To
+                            </td>
+                            <td>
+                                Amount
+                            </td>
+                            <td>
+                                Date
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%let count=1%>
+                        <%for(let i=noOfTransactions-1;i>=0 ;i--){%>
+                            <tr>
+                                <td>
+                                    <%=count%>
+                                </td>
+                                <td>
+                                    <%=transactions[i].senderEmail%>
+                                </td>
+                                <td>
+                                    <%=transactions[i].receiverEmail%>
+                                </td>
+                                <td>
+                                    <span class="balance">
+                                        <%=transactions[i].amount%>
+                                    </span>
+                                </td>
+                                <td>
+                                    <%=transactions[i].Date%>
+                                </td>
+                            </tr>
+                            <%count++}%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <title>TSF - Banking System</title>
+</head>
+
+<body>
+    <main>
+        <div id="goup">
+            <a href="#home">
+                <img src="/imgs/up.png" alt="TOP">
+            </a>
+        </div>
+        <section id="home">
+            <p>Welcome</p>
+            <p>to</p>
+            <h1>THE BANK</h1>
+            <i class="fas fa-university"></i>
+            <div id="down">
+                <a href="#about">
+                    <img src="/imgs/down.svg" id="scroll" alt="scroll down?">
+                </a>
+            </div>
+        </section>
+        <section id="about">
+            <div class="section-header">
+                <h2>Who are we?</h2>
+            </div>
+            <div class="section-info">
+                <p>
+                    We are a very basic Banking web application built to demonstrate the transactions that take place
+                    in a
+                    bank.
+                    One can view the list of all customers, transfer funds, or view transaction history.
+                </p>
+            </div>
+        </section>
+        <section id="services">
+            <div class="section-header">
+                <h2>Our Services</h2>
+            </div>
+            <div class="section-info">
+                <div class="container">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="desc">
+                        View Customers
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="service-icon">
+                        <i class="far fa-money-bill-alt"></i>
+                    </div>
+                    <div class="desc">
+                        Transfer Funds
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="service-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="desc">
+                        View Transaction history
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="use-services">
+            <div class="section-header">
+                <h2>Try now!</h2>
+            </div>
+            <div class="section-info">
+                <div class="now-button">
+                    <a href="/customers">
+                        <button class="btn-color">
+                            <div class="trynow-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            Transfer Funds
+                        </button>
+                    </a>
+                </div>
+                <div class="now-button">
+                    <a href="/transactions">
+                        <button class="btn-color">
+                            <div class="trynow-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            View Transaction History
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+
+</html>
