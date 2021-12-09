@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+const moment = require('moment')
 
 require('dotenv').config()
 
@@ -76,14 +77,16 @@ app.post('/transfer/:id',async (req,res)=>{
             //Balance updated for receiver
             await Customer.findOneAndUpdate({ _id: receiver._id }, { balance: receiver.balance+amount})
             // Transaction history database updated
-            const format = {day: 'numeric', month: 'numeric',year: 'numeric',hour:'2-digit',minute:'numeric',second:'numeric'};
-            const now = new Date()
-            const transactionTime = now.toLocaleDateString("en-US",format)
+            const time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            console.log(time)
+            // const format = {day: 'numeric', month: 'numeric',year: 'numeric',hour:'2-digit',minute:'numeric',second:'numeric'};
+            // const now = new Date()
+            // const transactionTime = now.toLocaleDateString("en-US",format)
             const newTransaction = new Transaction({
                 senderEmail: sender.email,
                 receiverEmail: receiver.email,
                 amount:amount,
-                Date:transactionTime
+                Date:time
             })
             newTransaction.save();
             res.redirect("?transferfunds=successful")
