@@ -4,7 +4,7 @@
   "description": "Basic banking system project created as a part of the TSF GRIP internship programme",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Rujin Shrestha",
   "license": "ISC",
