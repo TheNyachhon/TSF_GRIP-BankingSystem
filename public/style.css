@@ -249,10 +249,12 @@ footer{
 }
 /* Navigation Bar*/
 header{
-    display: none;
+    transform: translateY(-100%);
+    visibility: hidden;
     position: fixed;
     width:100vw;
     z-index: 1;
+    transition:all 1s;
 }
 nav{
     font-family: 'Poppins', sans-serif;
