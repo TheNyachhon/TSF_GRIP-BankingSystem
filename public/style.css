@@ -372,6 +372,19 @@ tbody tr:nth-child(2n){
 }
 
 /* TRANSFER FUNDS PAGE */
+#loading{
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loading>img{
+    margin-top:10em;
+    width:10em;
+}
 #transfer{
     margin:1em;
     padding:1em;

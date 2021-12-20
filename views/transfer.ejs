@@ -4,11 +4,20 @@
 <head>
     <%- include('partials/header') %>
         <title>TSF - Banking System</title>
+        <style>
+            header{
+                transform: translateY(-100%);
+                background-color: red;
+            }
+        </style>
 </head>
 
 <body>
     <%- include('partials/navbar') %>
         <main id="service-page">
+            <div id="loading">
+                <img src="/imgs/loading.svg" alt="Loading">
+            </div>
             <div id="service-header">
                 <h1>Transfer Funds</h1>
             </div>
@@ -50,6 +59,8 @@
             </div>
         </main>
         <%- include('partials/footer') %>
+        <script src="/navbar.js"></script>        
+        <script src="/transfer.js"></script>        
 </body>
 
 </html>
