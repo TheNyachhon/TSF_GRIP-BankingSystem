@@ -9,6 +9,11 @@
 <body>
     <%- include('partials/navbar') %>
         <main id="service-page">
+            <div id="goup">
+                <a href="#">
+                    <img src="/imgs/up.png" alt="TOP">
+                </a>
+            </div>
             <div id="service-header">
                 <h1>Transaction History</h1>
             </div>
@@ -35,27 +40,27 @@
                     </thead>
                     <tbody>
                         <%let count=1%>
-                        <%for(let i=noOfTransactions-1;i>=0 ;i--){%>
-                            <tr>
-                                <td>
-                                    <%=count%>
-                                </td>
-                                <td>
-                                    <%=transactions[i].senderEmail%>
-                                </td>
-                                <td>
-                                    <%=transactions[i].receiverEmail%>
-                                </td>
-                                <td>
-                                    <span class="balance">
-                                        <%=transactions[i].amount%>
-                                    </span>
-                                </td>
-                                <td>
-                                    <%=transactions[i].Date%>
-                                </td>
-                            </tr>
-                            <%count++}%>
+                            <%for(let i=noOfTransactions-1;i>=0 ;i--){%>
+                                <tr>
+                                    <td>
+                                        <%=count%>
+                                    </td>
+                                    <td>
+                                        <%=transactions[i].senderEmail%>
+                                    </td>
+                                    <td>
+                                        <%=transactions[i].receiverEmail%>
+                                    </td>
+                                    <td>
+                                        <span class="balance">
+                                            <%=transactions[i].amount%>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <%=transactions[i].Date%>
+                                    </td>
+                                </tr>
+                                <%count++}%>
                     </tbody>
                 </table>
             </div>
