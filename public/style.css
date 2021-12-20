@@ -249,10 +249,11 @@ footer{
 }
 /* Navigation Bar*/
 header{
-    transform: translateY(-100%);
-    visibility: hidden;
+    /* transform: translateY(-100%);
+    visibility: hidden; */
     position: fixed;
     width:100vw;
+    top:0;
     z-index: 1;
     transition:all 1s;
 }

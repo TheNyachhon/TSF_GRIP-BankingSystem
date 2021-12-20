@@ -28,6 +28,8 @@ const nav = document.querySelector("#dropdown");
 const header = document.querySelector("#tocollapse");
 // DROPDOWN Menu Display
 const dropdownIcon = document.querySelector('#dropdown-icon');
+header.style.visibility = "hidden";
+header.style.transform = "translateY(-100%)"
 dropdown.addEventListener('click', () => {
     if (header.style.visibility === "visible") { //if nav is visible then hide
         header.style.visibility = "hidden";

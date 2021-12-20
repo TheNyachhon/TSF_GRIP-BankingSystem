@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <%- include('partials/home_navbar') %>
     <main>
         <div id="goup">
             <a href="#home">
@@ -74,7 +75,7 @@
             </div>
             <div class="section-info">
                 <div class="now-button">
-                    <a href="/customers">
+                    <a onclick="delayRedirect(event,'/customers')" class="redirect">
                         <button class="btn-color">
                             <div class="trynow-icon">
                                 <i class="fas fa-exchange-alt"></i>
@@ -84,7 +85,7 @@
                     </a>
                 </div>
                 <div class="now-button">
-                    <a href="/transactions">
+                    <a onclick="delayRedirect(event,'/transactions')" class="redirect">
                         <button class="btn-color">
                             <div class="trynow-icon">
                                 <i class="fas fa-history"></i>
@@ -97,6 +98,7 @@
         </section>
     </main>
     <%- include('partials/footer') %>
+    <script src="/home_index.js"></script>
 </body>
 
 </html>
