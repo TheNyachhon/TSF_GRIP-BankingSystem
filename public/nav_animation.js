@@ -9,6 +9,12 @@ function delayRedirect(e,url){
         window.location.href = url
     },500)
 }
+function TransferRedirect(e,url){
+    e.preventDefault()
+    setTimeout(()=>{
+        window.location.href = url
+    },500)
+}
 function navbarAnimate(){
     header.style.visibility = "visible";
     header.style.transform = "translateY(0)"
