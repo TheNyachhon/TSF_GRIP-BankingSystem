@@ -168,7 +168,8 @@ section{
     color:white
 }
 .now-button button:hover{
-    box-shadow: 0 0 2em 0.2em #0e76a8;
+    transform: translateY(-0.5em);
+    box-shadow: 0 1em 0.8em #0e76a888;
 }
 .now-button a{
     text-decoration: none;
